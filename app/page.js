@@ -1,4 +1,4 @@
-import { CustomFilter, Hero, SearchBar } from '@/components'
+import { CustomFilter, Hero, SearchBar,CarCard } from '@/components'
 import { fetchCars } from '@/utils'
 import Image from 'next/image'
 
@@ -31,7 +31,9 @@ export default async function Home({searchParams}) {
           {!isDataEmpty ? (
             <section>
               <div className='grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14'>
-                {allCars?.map((car) => (car.model))}
+                {allCars?.map((car) => (
+                  <CarCard car={car}/>
+                ))}
               </div>
             </section>
           ) : (
